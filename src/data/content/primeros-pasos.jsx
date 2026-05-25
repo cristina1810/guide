@@ -5,6 +5,7 @@ import PlanAprendizaje from "../../assets/university/PlanAprendizaje.png";
 import PracticalCredentials from "../../assets/practical/Credentials.png";
 import EcommerceModal from "../../assets/practical/EcommerceModal.png";
 import PublisedDate from "../../assets/practical/PublishedDate.png";
+import Rubrica from "../../assets/Rubrica.png";
 
 export const primerosPasos = {
   title: "Primeros pasos e Interfaz",
@@ -74,6 +75,7 @@ export const primerosPasos = {
         'Al obtener las credenciales podemos acceder con estas a la interfaz de Tealium iQ para realizar el examen práctico. Encontraremos estas credenciales en el apartado "Practical Credentials" y dentro veremos dos apartados: uno con las credenciales para la herramienta en si y otras credenciales para usar en el ecommerce de Training',
         "Para acceder al ecommerce y hacer las pruebas de manera más certera optaremos por acceder en modo incógnito. Una vez dentro veremos un modal donde introduciremos las credenciales mencionadas antes junto con el entorno al que queremos acceder",
         "Antes de hacer cualquier prueba y debuggear nos aseguramos de que la versión en la que nos encontramos es la más reciente ya que a veces puede dar fallos. Esto lo comprobaremos mediante la extensión Tealium Tools en la sección Web Companion",
+        "Al finalizar el examen práctico y entregarlo, el examinador nos enviará un correo con todos los detalles de los errores en la prueba, en caso de tenerlos (ver imagen 4). Tener en cuenta que hay muchas maneras de hacer bien un mismo apartado y que puede discrepar de un examinador a otro",
       ],
       imagen: [
         {
@@ -82,6 +84,7 @@ export const primerosPasos = {
         },
         { src: EcommerceModal, alt: "Modal del ecommerce" },
         { src: PublisedDate, alt: "Comprobar versión publicada" },
+        { src: Rubrica, alt: "Detalles de la prueba" },
       ],
     },
     {

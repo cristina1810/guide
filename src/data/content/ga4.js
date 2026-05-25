@@ -8,7 +8,7 @@ export const ga4 = {
     "Configura GA4 vía el template oficial de Tealium y mapea los eventos clave del ecommerce del enunciado.",
   steps: [
     {
-      title: "1. Añadir el tag de GA4",
+      title: "EXTENSIÓN: dar valor al Measurement ID",
       enunciado: "Añade el tag Google Analytics 4 desde el marketplace.",
       solucion: [
         "Tags → Add Tag → Google Analytics 4.",
@@ -20,7 +20,7 @@ export const ga4 = {
         "GA4 tiene dos templates en el marketplace (Web y App). Usa siempre Web para sitios. La versión más reciente trae el modelo de consent v2 ya integrado.",
     },
     {
-      title: "2. Configurar el Measurement ID",
+      title: "TAG: GA4",
       enunciado: "Configura el Measurement ID indicado en el enunciado.",
       solucion: [
         "Configuration → Measurement ID = G-XXXXXXXXXX.",
