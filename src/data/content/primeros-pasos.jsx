@@ -5,7 +5,7 @@ import PlanAprendizaje from "../../assets/university/PlanAprendizaje.png";
 import PracticalCredentials from "../../assets/practical/Credentials.png";
 import EcommerceModal from "../../assets/practical/EcommerceModal.png";
 import PublisedDate from "../../assets/practical/PublishedDate.png";
-import Rubrica from "../../assets/Rubrica.png";
+import Rubrica from "../../assets/rubrica.png";
 
 export const primerosPasos = {
   title: "Primeros pasos e Interfaz",
