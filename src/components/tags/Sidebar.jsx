@@ -36,7 +36,7 @@ const EVENTSTREAM_ITEMS = [
 
 const activeClass =
   "bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/40 dark:to-blue-900/20 " +
-  "text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-200/60 dark:ring-blue-800/40 " +
+  "text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-200/60 dark:ring-zinc-700 " +
   "font-semibold rounded-lg flex items-center px-4 py-3 gap-x-3 shadow-sm " +
   "transition-all duration-300 ease-out";
 
@@ -68,8 +68,8 @@ function SubNavItem({ to, label }) {
       className={({ isActive }) =>
         isActive
           ? "flex items-center gap-x-3 px-3 py-2 rounded-lg " +
-            "bg-blue-100/80 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 " +
-            "ring-1 ring-inset ring-blue-200/60 dark:ring-blue-800/40 " +
+            "bg-blue-100/80 dark:bg-zinc-800 text-blue-700 dark:text-blue-300 " +
+            "ring-1 ring-inset ring-blue-200/60 dark:ring-zinc-700 " +
             "font-semibold shadow-sm transition-all duration-300 ease-out"
           : "flex items-center gap-x-3 px-3 py-2 rounded-lg " +
             "text-slate-500 dark:text-slate-400 " +
@@ -102,7 +102,7 @@ function CollapsibleSection({ icon: Icon, label, subItems }) {
         onClick={() => setIsOpen((prev) => !prev)}
         className={
           (anyActive
-            ? "bg-blue-50/80 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-semibold ring-1 ring-inset ring-blue-200/40 dark:ring-blue-800/30"
+            ? "bg-blue-50/80 dark:bg-zinc-800 text-blue-700 dark:text-blue-300 font-semibold ring-1 ring-inset ring-blue-200/40 dark:ring-zinc-700"
             : "text-slate-600 dark:text-slate-400 " +
               "hover:text-slate-900 dark:hover:text-slate-200 " +
               "hover:bg-slate-200/60 dark:hover:bg-slate-800/50") +

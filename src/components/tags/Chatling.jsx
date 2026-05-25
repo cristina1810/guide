@@ -35,7 +35,7 @@ function SelectField({ value, onChange, options, className = "w-52" }) {
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border border-gray-300 rounded px-2 py-1 text-xs appearance-none bg-white focus:outline-none focus:ring-1 focus:ring-blue-400"
+        className="w-full border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs appearance-none bg-white dark:bg-zinc-900 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-blue-400"
       >
         {options.map((o) => (
           <option key={o.value ?? o} value={o.value ?? o}>
@@ -45,7 +45,7 @@ function SelectField({ value, onChange, options, className = "w-52" }) {
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-1.5 flex items-center">
         <svg
-          className="w-3 h-3 text-gray-400"
+          className="w-3 h-3 text-gray-400 dark:text-zinc-500"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -65,7 +65,7 @@ function SelectField({ value, onChange, options, className = "w-52" }) {
 function SectionTitle({ children, className = "" }) {
   return (
     <h3
-      className={`text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3 ${className}`}
+      className={`text-xs font-semibold text-gray-500 dark:text-zinc-400 uppercase tracking-wide mb-3 ${className}`}
     >
       {children}
     </h3>
@@ -75,14 +75,14 @@ function SectionTitle({ children, className = "" }) {
 function Field({ label, children, className = "" }) {
   return (
     <div className={`mb-4 ${className}`}>
-      <label className="block text-xs text-gray-500 mb-1">{label}</label>
+      <label className="block text-xs text-gray-500 dark:text-zinc-400 mb-1">{label}</label>
       {children}
     </div>
   );
 }
 
 function Helper({ children }) {
-  return <p className="text-xs text-gray-400 mt-1">{children}</p>;
+  return <p className="text-xs text-gray-400 dark:text-zinc-500 mt-1">{children}</p>;
 }
 
 function BlueButton({ icon, children }) {
@@ -142,23 +142,23 @@ function GreenDot() {
 
 function RulePopover({ rule, onClose }) {
   return (
-    <div className="absolute left-2 top-full mt-1 z-50 w-72 bg-white border border-gray-200 rounded-lg shadow-xl">
+    <div className="absolute left-2 top-full mt-1 z-50 w-72 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg shadow-xl">
       {/* Header */}
-      <div className="flex items-start justify-between p-3 border-b border-gray-100">
+      <div className="flex items-start justify-between p-3 border-b border-gray-100 dark:border-zinc-800">
         <div>
-          <p className="text-sm font-semibold text-gray-800">{rule.name}</p>
-          <p className="text-xs text-gray-400 mt-0.5">Rule (UID: {rule.id})</p>
+          <p className="text-sm font-semibold text-gray-800 dark:text-zinc-100">{rule.name}</p>
+          <p className="text-xs text-gray-400 dark:text-zinc-500 mt-0.5">Rule (UID: {rule.id})</p>
         </div>
         <button
           onClick={onClose}
-          className="text-gray-400 hover:text-gray-600 text-lg leading-none ml-2"
+          className="text-gray-400 dark:text-zinc-500 hover:text-gray-600 dark:hover:text-zinc-300 text-lg leading-none ml-2"
         >
           ×
         </button>
       </div>
       {/* Body */}
       <div className="p-3">
-        <div className="flex items-center gap-1.5 mb-3 text-sm text-gray-600">
+        <div className="flex items-center gap-1.5 mb-3 text-sm text-gray-600 dark:text-zinc-300">
           <svg
             className="w-4 h-4"
             fill="none"
@@ -177,17 +177,17 @@ function RulePopover({ rule, onClose }) {
         <div className="border-l-2 border-blue-400 pl-3 space-y-1">
           {rule.conditions.map((cond, i) =>
             cond.type === "AND" ? (
-              <p key={i} className="text-xs font-semibold text-gray-500">
+              <p key={i} className="text-xs font-semibold text-gray-500 dark:text-zinc-400">
                 AND
               </p>
             ) : (
-              <p key={i} className="text-xs text-gray-700">
-                <span className="font-mono text-gray-600">{cond.variable}</span>{" "}
-                <span className="font-semibold text-gray-800">
+              <p key={i} className="text-xs text-gray-700 dark:text-zinc-200">
+                <span className="font-mono text-gray-600 dark:text-zinc-300">{cond.variable}</span>{" "}
+                <span className="font-semibold text-gray-800 dark:text-zinc-100">
                   {cond.operator}
                 </span>
                 {cond.value && (
-                  <span className="ml-1 text-gray-600">{cond.value}</span>
+                  <span className="ml-1 text-gray-600 dark:text-zinc-300">{cond.value}</span>
                 )}
               </p>
             ),
@@ -220,13 +220,13 @@ function RuleChip({ rule, showPopover, onToggle, onRemove }) {
           <span className="text-xs font-medium text-blue-600">{rule.name}</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="text-xs text-gray-400">{rule.id}</span>
+          <span className="text-xs text-gray-400 dark:text-zinc-500">{rule.id}</span>
           <button
             onClick={(e) => {
               e.stopPropagation();
               onRemove();
             }}
-            className="text-gray-300 hover:text-gray-500 text-base leading-none"
+            className="text-gray-300 dark:text-zinc-600 hover:text-gray-500 dark:hover:text-zinc-400 text-base leading-none"
           >
             ×
           </button>
@@ -249,7 +249,7 @@ function RulesDragZone({ id, active, onDragEnter, onDragLeave, onDrop }) {
       className={`border-2 border-dashed rounded py-5 text-center text-xs transition-colors ${
         active
           ? "border-blue-400 bg-blue-50 text-blue-400"
-          : "border-gray-300 text-gray-400"
+          : "border-gray-300 dark:border-zinc-600 text-gray-400 dark:text-zinc-500"
       }`}
     >
       Drag a rule here
@@ -296,26 +296,26 @@ function RulesAndEventsTab() {
       {/* ── Main row ── */}
       <div className="flex flex-1 min-h-0">
         {/* ════ LEFT — builder ════ */}
-        <div className="flex-1 border-r border-gray-200 px-6 py-5 overflow-y-auto">
-          <h2 className="text-sm font-semibold text-gray-800 mb-1">
+        <div className="flex-1 border-r border-gray-200 dark:border-zinc-700 px-6 py-5 overflow-y-auto">
+          <h2 className="text-sm font-semibold text-gray-800 dark:text-zinc-100 mb-1">
             Set Rules and Events
           </h2>
-          <div className="border-b border-gray-200 mb-4" />
-          <p className="text-xs text-gray-500 mb-5">
+          <div className="border-b border-gray-200 dark:border-zinc-700 mb-4" />
+          <p className="text-xs text-gray-500 dark:text-zinc-400 mb-5">
             Tag will fire when the following rule and event conditions are true:
           </p>
 
           {/* AND block */}
-          <div className="border-l-4 border-blue-500 bg-white rounded-r-lg border border-gray-200 p-4 mb-4">
+          <div className="border-l-4 border-blue-500 bg-white dark:bg-zinc-900 rounded-r-lg border border-gray-200 dark:border-zinc-700 p-4 mb-4">
             <div className="space-y-2">
               {activeRules.map((rule, idx) => (
                 <div key={rule.id}>
                   {idx > 0 && (
                     <div className="flex items-center gap-2 my-2">
-                      <span className="text-xs font-bold text-gray-400">
+                      <span className="text-xs font-bold text-gray-400 dark:text-zinc-500">
                         OR
                       </span>
-                      <div className="flex-1 border-t border-dashed border-gray-200" />
+                      <div className="flex-1 border-t border-dashed border-gray-200 dark:border-zinc-700" />
                     </div>
                   )}
                   <RuleChip
@@ -330,8 +330,8 @@ function RulesAndEventsTab() {
               {/* OR separator + drop zone */}
               {activeRules.length > 0 && (
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs font-bold text-gray-400">OR</span>
-                  <div className="flex-1 border-t border-dashed border-gray-200" />
+                  <span className="text-xs font-bold text-gray-400 dark:text-zinc-500">OR</span>
+                  <div className="flex-1 border-t border-dashed border-gray-200 dark:border-zinc-700" />
                 </div>
               )}
               <RulesDragZone
@@ -344,8 +344,8 @@ function RulesAndEventsTab() {
 
               {/* AND separator + drop zone */}
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-xs font-bold text-gray-400">AND</span>
-                <div className="flex-1 border-t border-dashed border-gray-200" />
+                <span className="text-xs font-bold text-gray-400 dark:text-zinc-500">AND</span>
+                <div className="flex-1 border-t border-dashed border-gray-200 dark:border-zinc-700" />
               </div>
               <RulesDragZone
                 id="and-zone"
@@ -358,13 +358,13 @@ function RulesAndEventsTab() {
           </div>
 
           {/* + AND button */}
-          <button className="flex items-center gap-1.5 border border-gray-300 rounded px-3 py-1.5 text-xs text-gray-600 hover:bg-gray-50 mb-5 transition-colors">
+          <button className="flex items-center gap-1.5 border border-gray-300 dark:border-zinc-600 rounded px-3 py-1.5 text-xs text-gray-600 dark:text-zinc-300 hover:bg-gray-50 dark:hover:bg-zinc-800 mb-5 transition-colors">
             <span className="text-blue-500 font-bold text-sm">+</span> AND
           </button>
 
           {/* AND NOT */}
-          <p className="text-xs font-semibold text-gray-600 mb-2">AND NOT</p>
-          <div className="border-l-4 border-blue-500 rounded-r-lg border border-gray-200 p-4">
+          <p className="text-xs font-semibold text-gray-600 dark:text-zinc-300 mb-2">AND NOT</p>
+          <div className="border-l-4 border-blue-500 rounded-r-lg border border-gray-200 dark:border-zinc-700 p-4">
             <RulesDragZone
               id="not-zone"
               active={hoveredZone === "not-zone"}
@@ -378,7 +378,7 @@ function RulesAndEventsTab() {
         {/* ════ RIGHT — rules list ════ */}
         <div className="w-80 shrink-0 px-4 py-5">
           {/* Sub-tabs */}
-          <div className="flex border-b border-gray-200 mb-4">
+          <div className="flex border-b border-gray-200 dark:border-zinc-700 mb-4">
             {["Rules", "Events"].map((t) => (
               <button
                 key={t}
@@ -386,7 +386,7 @@ function RulesAndEventsTab() {
                 className={`px-4 py-2 text-xs font-medium border-b-2 transition-colors ${
                   subTab === t
                     ? "border-blue-500 text-blue-600"
-                    : "border-transparent text-gray-500 hover:text-gray-700"
+                    : "border-transparent text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"
                 }`}
               >
                 {t}
@@ -396,12 +396,12 @@ function RulesAndEventsTab() {
 
           {/* Toolbar */}
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-xs text-gray-500 mr-auto whitespace-nowrap">
+            <span className="text-xs text-gray-500 dark:text-zinc-400 mr-auto whitespace-nowrap">
               {filteredList.length} Rules
             </span>
             <div className="relative">
               <svg
-                className="w-3 h-3 text-gray-400 absolute left-2 top-1/2 -translate-y-1/2"
+                className="w-3 h-3 text-gray-400 dark:text-zinc-500 absolute left-2 top-1/2 -translate-y-1/2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -417,7 +417,7 @@ function RulesAndEventsTab() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search"
-                className="border border-gray-300 rounded pl-6 pr-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400 w-28"
+                className="border border-gray-300 dark:border-zinc-600 rounded pl-6 pr-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400 w-28"
               />
             </div>
             <button className="flex items-center gap-0.5 border border-blue-500 text-blue-600 hover:bg-blue-50 text-xs font-medium px-2 py-1 rounded whitespace-nowrap transition-colors">
@@ -426,16 +426,16 @@ function RulesAndEventsTab() {
           </div>
 
           {/* Table */}
-          <div className="border border-gray-200 rounded overflow-hidden">
+          <div className="border border-gray-200 dark:border-zinc-700 rounded overflow-hidden">
             {/* Header */}
-            <div className="flex items-center bg-gray-50 px-3 py-2 border-b border-gray-200">
+            <div className="flex items-center bg-gray-50 dark:bg-zinc-800 px-3 py-2 border-b border-gray-200 dark:border-zinc-700">
               <div className="w-8" />
               <div className="w-5" />
               <button
                 onClick={() =>
                   setSortDir((d) => (d === "asc" ? "desc" : "asc"))
                 }
-                className="flex-1 flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-gray-700"
+                className="flex-1 flex items-center gap-1 text-xs font-semibold text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"
               >
                 Name
                 <svg
@@ -452,7 +452,7 @@ function RulesAndEventsTab() {
                   />
                 </svg>
               </button>
-              <div className="flex items-center gap-1 text-xs font-semibold text-gray-500 w-10 justify-end">
+              <div className="flex items-center gap-1 text-xs font-semibold text-gray-500 dark:text-zinc-400 w-10 justify-end">
                 UID
                 <svg
                   className="w-3 h-3"
@@ -477,7 +477,7 @@ function RulesAndEventsTab() {
                 <div
                   key={rule.id}
                   draggable
-                  className={`flex items-center px-3 py-2.5 border-b border-gray-100 last:border-0 cursor-grab hover:bg-gray-50 transition-colors ${
+                  className={`flex items-center px-3 py-2.5 border-b border-gray-100 dark:border-zinc-800 last:border-0 cursor-grab hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors ${
                     isActive ? "bg-blue-50" : ""
                   }`}
                 >
@@ -496,7 +496,7 @@ function RulesAndEventsTab() {
                   >
                     {rule.name}
                   </span>
-                  <span className="text-xs text-gray-400 w-10 text-right">
+                  <span className="text-xs text-gray-400 dark:text-zinc-500 w-10 text-right">
                     {rule.id}
                   </span>
                 </div>
@@ -535,7 +535,7 @@ function ConfigurationTab() {
 
   return (
     <div className="px-6 py-5">
-      <h2 className="text-sm font-semibold text-gray-700 mb-4">
+      <h2 className="text-sm font-semibold text-gray-700 dark:text-zinc-200 mb-4">
         Configuration
       </h2>
       <SectionTitle>Properties</SectionTitle>
@@ -543,7 +543,7 @@ function ConfigurationTab() {
       <Field label="Title">
         <input
           value={title}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           Assign a unique name when using multiple tags by the same vendor.
@@ -554,7 +554,7 @@ function ConfigurationTab() {
         <textarea
           value={notes}
           rows={3}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs resize-none focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs resize-none focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
       </Field>
 
@@ -566,7 +566,7 @@ function ConfigurationTab() {
       <Field label="Base URL">
         <input
           value={"https://chatling.ai/js/embed.js"}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           The base url for your pixel. Or, for script tag, this is the complete
@@ -576,7 +576,7 @@ function ConfigurationTab() {
       <Field label="HTTPS Override">
         <input
           value={""}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           Optional. Complete this field if the HTTPS URL is different from the
@@ -586,7 +586,7 @@ function ConfigurationTab() {
       <Field label="Query String Delimeter">
         <input
           value={""}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           Optional. Change this to use a custom query string delimiter. Default
@@ -596,7 +596,7 @@ function ConfigurationTab() {
       <Field label="Parameter Delimiter">
         <input
           value={""}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           Optional. Change this to use a custom parameter delimiter. Default
@@ -606,7 +606,7 @@ function ConfigurationTab() {
       <Field label="Key/Value Delimiter">
         <input
           value={""}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           Optional. Change this to use a custom key value delimiter. Default
@@ -616,7 +616,7 @@ function ConfigurationTab() {
       <Field label="Query String">
         <input
           value={""}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           Optional. Set of name=value&name2=value2 params (static values can be
@@ -635,7 +635,7 @@ function ConfigurationTab() {
       <Field label="Cache Bust Name">
         <input
           value={""}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           Optional. Overrides the default cache bust param name. If Auto Cache
@@ -661,23 +661,23 @@ function ConfigurationTab() {
       {publishToggles.map(({ label, val, set }) => (
         <div key={label} className="flex items-center gap-3 mb-3">
           <Toggle checked />
-          <span className="text-xs text-gray-600">{label}</span>
-          <span className="text-xs text-gray-400">{val ? "On" : "Off"}</span>
+          <span className="text-xs text-gray-600 dark:text-zinc-300">{label}</span>
+          <span className="text-xs text-gray-400 dark:text-zinc-500">{val ? "On" : "Off"}</span>
         </div>
       ))}
 
       <div className="mt-3 mb-1 flex items-center gap-3">
         <Toggle checked={false} />
-        <span className="text-xs font-medium text-gray-600">Bundle Flag</span>
-        <span className="text-xs text-gray-400">
+        <span className="text-xs font-medium text-gray-600 dark:text-zinc-300">Bundle Flag</span>
+        <span className="text-xs text-gray-400 dark:text-zinc-500">
           {bundleFlag ? "On" : "Off"}
         </span>
       </div>
-      <p className="text-xs text-gray-400 mb-1">
+      <p className="text-xs text-gray-400 dark:text-zinc-500 mb-1">
         This flag determines if the tag code is bundled into using.js. This will
         reduce the number of server requests.
       </p>
-      <p className="text-xs text-gray-400 mb-5">
+      <p className="text-xs text-gray-400 dark:text-zinc-500 mb-5">
         A full list of bundled tags is available in the Publish Settings dialog.
       </p>
 
@@ -698,22 +698,22 @@ function ConfigurationTab() {
 
       <div className="flex items-center gap-3 mb-1">
         <Toggle checked={sendFlag} onChange={setSendFlag} />
-        <span className="text-xs font-medium text-gray-600">Send Flag</span>
-        <span className="text-xs text-gray-400">{sendFlag ? "On" : "Off"}</span>
+        <span className="text-xs font-medium text-gray-600 dark:text-zinc-300">Send Flag</span>
+        <span className="text-xs text-gray-400 dark:text-zinc-500">{sendFlag ? "On" : "Off"}</span>
       </div>
-      <p className="text-xs text-gray-400 mb-4">
+      <p className="text-xs text-gray-400 dark:text-zinc-500 mb-4">
         This flag determines whether or not this library has event-level data
         sent to the tracking.
       </p>
 
       <div className="flex items-center gap-3 mb-1">
         <Toggle checked={syncLoad} onChange={setSyncLoad} />
-        <span className="text-xs font-medium text-gray-600">
+        <span className="text-xs font-medium text-gray-600 dark:text-zinc-300">
           Synchronous Load Type
         </span>
-        <span className="text-xs text-gray-400">{syncLoad ? "On" : "Off"}</span>
+        <span className="text-xs text-gray-400 dark:text-zinc-500">{syncLoad ? "On" : "Off"}</span>
       </div>
-      <p className="text-xs text-gray-400 mb-4">
+      <p className="text-xs text-gray-400 dark:text-zinc-500 mb-4">
         This value is set when the library needs to be loaded synchronously.
       </p>
 
@@ -721,7 +721,7 @@ function ConfigurationTab() {
         <input
           value={customScript}
           onChange={(e) => setCustomScript(e.target.value)}
-          className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
         />
         <Helper>
           This value is set when the library that supports this tag is served
@@ -770,7 +770,7 @@ function MappedVariablesTab() {
   return (
     <div className="px-6 py-5">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-sm font-semibold text-gray-700">
+        <h2 className="text-sm font-semibold text-gray-700 dark:text-zinc-200">
           Mapped Variables
         </h2>
         <button className="flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-3 py-1.5 rounded transition-colors">
@@ -787,14 +787,14 @@ function MappedVariablesTab() {
         />
       </div>
 
-      <div className="border border-gray-200 rounded overflow-hidden">
+      <div className="border border-gray-200 dark:border-zinc-700 rounded overflow-hidden">
         <table className="w-full text-xs">
           <thead>
-            <tr className="bg-gray-50 border-b border-gray-200">
-              <th className="text-left px-4 py-2.5 text-gray-500 font-medium w-5/12">
+            <tr className="bg-gray-50 dark:bg-zinc-800 border-b border-gray-200 dark:border-zinc-700">
+              <th className="text-left px-4 py-2.5 text-gray-500 dark:text-zinc-400 font-medium w-5/12">
                 Variable
               </th>
-              <th className="text-left px-4 py-2.5 text-gray-500 font-medium w-6/12">
+              <th className="text-left px-4 py-2.5 text-gray-500 dark:text-zinc-400 font-medium w-6/12">
                 Destination
               </th>
               <th className="w-1/12" />
@@ -806,7 +806,7 @@ function MappedVariablesTab() {
               return (
                 <tr
                   key={v.id}
-                  className="border-b border-gray-100 hover:bg-gray-50 group"
+                  className="border-b border-gray-100 dark:border-zinc-800 hover:bg-gray-50 dark:hover:bg-zinc-800 group"
                 >
                   <td className="px-4 py-2.5">
                     <div className="flex items-center gap-2">
@@ -814,10 +814,10 @@ function MappedVariablesTab() {
                         ≡
                       </span>
                       <div>
-                        <div className="font-medium text-gray-700">
+                        <div className="font-medium text-gray-700 dark:text-zinc-200">
                           {v.variable}
                         </div>
-                        <div className="text-gray-400">{v.type}</div>
+                        <div className="text-gray-400 dark:text-zinc-500">{v.type}</div>
                       </div>
                     </div>
                   </td>
@@ -833,7 +833,7 @@ function MappedVariablesTab() {
                   </td>
                   <td className="px-3 py-2.5">
                     <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <button className="text-gray-400 hover:text-gray-600">
+                      <button className="text-gray-400 dark:text-zinc-500 hover:text-gray-600 dark:hover:text-zinc-300">
                         <svg
                           className="w-3.5 h-3.5"
                           fill="none"
@@ -852,7 +852,7 @@ function MappedVariablesTab() {
                         onClick={() =>
                           setVars(vars.filter((x) => x.id !== v.id))
                         }
-                        className="text-gray-400 hover:text-red-500"
+                        className="text-gray-400 dark:text-zinc-500 hover:text-red-500"
                       >
                         <svg
                           className="w-3.5 h-3.5"
@@ -876,7 +876,7 @@ function MappedVariablesTab() {
           </tbody>
         </table>
       </div>
-      <p className="text-sm text-gray-400 my-5">
+      <p className="text-sm text-gray-400 dark:text-zinc-500 my-5">
         Así se vería la configuración al seleccionar la opcion Custom Variable,
         que se encuentra dentro del desplegable
       </p>
@@ -903,7 +903,7 @@ export default function Chatling() {
     <div className=" flex items-start justify-center">
       <div className="w-full rounded-xl overflow-hidden">
         {/* ── Tab Nav ── */}
-        <div className="flex border-b border-gray-200 bg-white">
+        <div className="flex border-b border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.id;
             const isDone =
@@ -915,7 +915,7 @@ export default function Chatling() {
                 className={`flex items-center gap-1.5 px-5 py-3 text-sm font-medium border  transition-colors whitespace-nowrap ${
                   isActive
                     ? "border-blue-500 text-blue-600 rounded-xl"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 rounded-xl"
+                    : "border-transparent text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200 hover:border-gray-300 dark:border-zinc-600 rounded-xl"
                 }`}
               >
                 {tab.label}

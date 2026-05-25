@@ -14,7 +14,8 @@
       "Bash(npx eslint *)",
       "Bash(grep -v \"^$\")",
       "Bash(npm install *)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(python3)"
     ]
   }
 }

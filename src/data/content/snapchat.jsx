@@ -10,19 +10,19 @@ export const snapchat = {
     <>
       <p>Configurar los siguientes eventos en el píxel de Snapchat:</p>
 
-      <ul className="list-disc list-inside space-y-1 text-gray-600">
+      <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-zinc-300">
         <li>Page Views</li>
         <li>Searches</li>
         <li>Add to Cart</li>
       </ul>
 
       {/* Pixel ID */}
-      <div className="flex items-center justify-between gap-2 bg-gray-50 border border-gray-200 rounded px-3 py-1 my-3">
+      <div className="flex items-center justify-between gap-2 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded px-3 py-1 my-3">
         <div>
-          <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">
+          <span className="text-xs font-medium text-gray-400 dark:text-zinc-500 uppercase tracking-wide">
             Pixel ID
           </span>
-          <p className="text-xs text-gray-700 font-mono mt-0.5">
+          <p className="text-xs text-gray-700 dark:text-zinc-200 font-mono mt-0.5">
             3130cbed-9440-4af6-9184-9c6ca93b8a02
           </p>
         </div>
@@ -40,7 +40,7 @@ export const snapchat = {
           href="https://chromewebstore.google.com/detail/snap-pixel-helper/hnlbfcoodjpconffdbddfglilhkhpdnf"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 hover:underline"
+          className="text-blue-500 dark:text-blue-400 hover:underline"
         >
           Snap Pixel Helper
         </a>{" "}
@@ -53,12 +53,12 @@ export const snapchat = {
       </p>
 
       {/* Código */}
-      <div className="bg-gray-100 border border-gray-200 rounded overflow-hidden">
-        <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-200 bg-gray-50">
-          <span className="text-xs text-gray-400 font-medium">JavaScript</span>
+      <div className="bg-gray-100 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded overflow-hidden">
+        <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800">
+          <span className="text-xs text-gray-400 dark:text-zinc-500 font-medium">JavaScript</span>
           <CopyButton text="document.querySelector('#qty').value" />
         </div>
-        <pre className="px-3 py-2 text-xs text-gray-700 font-mono overflow-x-auto">
+        <pre className="px-3 py-2 text-xs text-gray-700 dark:text-zinc-200 font-mono overflow-x-auto">
           {`document.querySelector('#qty').value`}
         </pre>
       </div>

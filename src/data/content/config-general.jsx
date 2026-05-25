@@ -11,12 +11,13 @@ import Product from "../../assets/general config/GC- data layer product.png";
 import Cart from "../../assets/general config/GC- data layer shopping cart.png";
 import Checkout from "../../assets/general config/GC- data layer checkout.png";
 import Confirmation from "../../assets/general config/GC - data layer order confirmation.png";
+import Banner from "../../assets/general config/banner.png";
 
 // Contenido de la sección "Configuración general".
 export const configGeneral = {
   title: "Configuración general",
   lead: {
-    intro: "Se pide revisar:",
+    intro: <p className="dark:text-zinc-200">Se pide revisar:</p>,
     pages: [
       "Home",
       "Categoría",
@@ -72,7 +73,7 @@ export const configGeneral = {
               </li>
               <li>
                 Tipo:{" "}
-                <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded text-xs">
+                <code className="bg-gray-100 dark:bg-zinc-800 px-1 rounded text-xs">
                   UDO Variable
                 </code>
                 .
@@ -85,7 +86,7 @@ export const configGeneral = {
             <img
               src={AddVariable}
               alt="Añadir variable en Tealium iQ"
-              className="rounded-lg border border-gray-200 dark:border-gray-700 max-w-xs"
+              className="rounded-lg border border-gray-200 dark:border-zinc-700 max-w-xs"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -106,19 +107,35 @@ export const configGeneral = {
             <img
               src={AddCommonVariable}
               alt="Añadir variables comunes en Tealium iQ"
-              className="rounded-lg border border-gray-200 dark:border-gray-700 max-w-xs"
+              className="rounded-lg border border-gray-200 dark:border-zinc-700 max-w-xs"
             />
           </div>
           <div className="flex flex-col gap-1.5">
             <p className="font-semibold text-sm">Variables por página</p>
             <StepCarousel
               images={[
-                { src: Home,         alt: "Data layer — Home",                   caption: "Home" },
-                { src: Category,     alt: "Data layer — Categoría",              caption: "Categoría" },
-                { src: Product,      alt: "Data layer — Producto",               caption: "Producto" },
-                { src: Cart,         alt: "Data layer — Carrito",                caption: "Carrito" },
-                { src: Checkout,     alt: "Data layer — Checkout",               caption: "Checkout" },
-                { src: Confirmation, alt: "Data layer — Confirmación de pedido", caption: "Confirmación del pedido" },
+                { src: Home, alt: "Data layer — Home", caption: "Home" },
+                {
+                  src: Category,
+                  alt: "Data layer — Categoría",
+                  caption: "Categoría",
+                },
+                {
+                  src: Product,
+                  alt: "Data layer — Producto",
+                  caption: "Producto",
+                },
+                { src: Cart, alt: "Data layer — Carrito", caption: "Carrito" },
+                {
+                  src: Checkout,
+                  alt: "Data layer — Checkout",
+                  caption: "Checkout",
+                },
+                {
+                  src: Confirmation,
+                  alt: "Data layer — Confirmación de pedido",
+                  caption: "Confirmación del pedido",
+                },
               ]}
             />
           </div>
@@ -129,7 +146,7 @@ export const configGeneral = {
       title: "EXTENSIÓN: product brand and event",
       enunciado: (
         <div className="flex flex-col gap-3">
-          <p className="text-slate-600 text-sm leading-relaxed">
+          <p className="text-slate-600 dark:text-zinc-300 text-sm leading-relaxed">
             Con una única extensión se actualizan automáticamente los siguientes
             valores cada vez que el usuario accede a una página de detalle de
             producto:
@@ -140,11 +157,11 @@ export const configGeneral = {
               { key: "tealium_event", value: "product_view" },
             ].map(({ key, value }) => (
               <div key={key} className="flex items-center gap-2">
-                <span className="px-2.5 py-1 rounded-md bg-blue-50 border border-blue-100 font-mono text-xs text-blue-600 font-medium">
+                <span className="px-2.5 py-1 rounded-md bg-blue-50 dark:bg-zinc-800 border border-blue-100 dark:border-zinc-700 font-mono text-xs text-blue-600 dark:text-blue-400 font-medium">
                   {key}
                 </span>
-                <span className="text-slate-300 text-sm">→</span>
-                <span className="px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-100 font-mono text-xs text-emerald-600 font-medium">
+                <span className="text-slate-300 dark:text-zinc-500 text-sm">→</span>
+                <span className="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-800/40 font-mono text-xs text-emerald-600 dark:text-emerald-400 font-medium">
                   {value}
                 </span>
               </div>
@@ -181,12 +198,12 @@ export const configGeneral = {
                 { variable: "product_brand", valor: "teal_ecomm" },
               ].map(({ variable, valor }) => (
                 <div key={variable} className="flex items-center gap-2">
-                  <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">
+                  <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono">
                     {variable}
                   </code>
-                  <span className="text-gray-400">→</span>
-                  <span className="text-gray-500">to text</span>
-                  <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">
+                  <span className="text-gray-400 dark:text-zinc-500">→</span>
+                  <span className="text-gray-500 dark:text-zinc-400">to text</span>
+                  <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono">
                     {valor}
                   </code>
                 </div>
@@ -201,22 +218,22 @@ export const configGeneral = {
               añade la condición:
             </p>
             <div className="flex items-center gap-2">
-              <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">
+              <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono">
                 page_type
               </code>
-              <span className="text-gray-400">=</span>
-              <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">
+              <span className="text-gray-400 dark:text-zinc-500">=</span>
+              <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono">
                 product
               </code>
             </div>
           </div>
 
-          <p className="text-gray-500 dark:text-gray-400 text-xs border-t border-gray-100 dark:border-gray-800 pt-3">
-            <strong className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-500 dark:text-zinc-400 text-xs border-t border-gray-100 dark:border-zinc-800 pt-3">
+            <strong className="text-gray-700 dark:text-zinc-300">
               ¿Por qué <code className="font-mono">page_type</code>?
             </strong>{" "}
             En el UTAG Debugger, esta variable vale{" "}
-            <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">
+            <code className="bg-gray-100 dark:bg-zinc-800 px-1 rounded font-mono">
               product
             </code>{" "}
             únicamente en páginas de detalle y cambia en el resto — es la señal
@@ -247,27 +264,36 @@ export const configGeneral = {
           <p>
             <strong>Lower-Casing</strong> convierte el valor de una variable a
             minúsculas antes de enviarlo. Sin esta transformación,{" "}
-            <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono text-xs">Zapatos rojos</code>
-            {" "}y{" "}
-            <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono text-xs">zapatos rojos</code>
-            {" "}contarían como dos búsquedas distintas, inflando los datos.
+            <code className="bg-gray-100 dark:bg-zinc-800 px-1 rounded font-mono text-xs">
+              Zapatos rojos
+            </code>{" "}
+            y{" "}
+            <code className="bg-gray-100 dark:bg-zinc-800 px-1 rounded font-mono text-xs">
+              zapatos rojos
+            </code>{" "}
+            contarían como dos búsquedas distintas, inflando los datos.
           </p>
 
           <div className="flex flex-col gap-1.5">
             <p className="font-semibold">Variable a transformar</p>
             <div className="flex items-center gap-2">
-              <code className="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">search_keyword</code>
-              <span className="text-gray-400 text-xs">→ lowercase</span>
+              <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono">
+                search_keyword
+              </code>
+              <span className="text-gray-400 dark:text-zinc-500 text-xs">→ lowercase</span>
             </div>
           </div>
 
-          <p className="text-gray-500 dark:text-gray-400 text-xs border-t border-gray-100 dark:border-gray-800 pt-3">
-            <strong className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-500 dark:text-zinc-400 text-xs border-t border-gray-100 dark:border-zinc-800 pt-3">
+            <strong className="text-gray-700 dark:text-zinc-300">
               {"¿Cómo identificar la variable?"}
             </strong>{" "}
             Realiza una búsqueda en la web y abre el UTAG Debugger. Busca la
             variable que recoge el término introducido — en este caso es{" "}
-            <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">search_keyword</code>.
+            <code className="bg-gray-100 dark:bg-zinc-800 px-1 rounded font-mono">
+              search_keyword
+            </code>
+            .
           </p>
         </div>
       ),
@@ -275,7 +301,7 @@ export const configGeneral = {
     {
       title: "EXTENSIÓN: discount banner",
       enunciado:
-        "Mostrar un banner de descuento en la pagina de detalle de un producto cuando el precio de dicho producto sea superior a 130.00. Usar el código mostrado en a continuación.",
+        "Mostrar un banner de descuento en la pagina de detalle de un producto cuando el precio de dicho producto sea superior a 130.00. Usar el código mostrado a continuación.",
       callout: {
         type: "info",
         text: (
@@ -290,8 +316,72 @@ export const configGeneral = {
         ),
       },
       component: DiscountBanner,
-      explicacion:
-        `Nunca publiques en Qa o Prod durante el examen salvo instrucción explícita. El mensaje de versión es evaluable: escribe algo descriptivo como "Setup inicial + UDO" para que el corrector pueda seguir el rastro de tus cambios.`,
+      explicacion: (
+        <div className="flex flex-col gap-4 text-sm">
+          <p>
+            La extensión de tipo <strong>Content Modification</strong> permite
+            inyectar HTML personalizado en la página bajo condiciones concretas.
+            Aquí la usamos para mostrar un banner de descuento únicamente cuando
+            se cumplan dos condiciones simultáneas.
+          </p>
+
+          <div className="flex flex-col gap-1.5">
+            <p className="font-semibold">Condiciones de activación</p>
+            <div className="flex flex-col gap-1.5">
+              {[
+                { variable: "page_type", op: "=", valor: "product" },
+                { variable: "product_list_price", op: ">", valor: "130" },
+              ].map(({ variable, op, valor }) => (
+                <div key={variable} className="flex items-center gap-2">
+                  <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono">
+                    {variable}
+                  </code>
+                  <span className="text-gray-400 dark:text-zinc-500">{op}</span>
+                  <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono">
+                    {valor}
+                  </code>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <p className="font-semibold">Selector de elemento</p>
+            <p>
+              Elige <strong>CSS Selector</strong> como tipo de selector e
+              introduce el identificador del elemento donde se insertará el
+              banner:
+            </p>
+
+            <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono w-36">
+              div.breadcrumbs
+            </code>
+            <span className=" text-s">Posición:</span>
+            <code className="bg-gray-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-xs font-mono w-29">
+              Before Node
+            </code>
+
+            <p className="text-gray-500 dark:text-zinc-400 text-xs pt-1">
+              Para identificar el selector, abre las DevTools del navegador,
+              inspecciona el elemento donde quieres insertar el banner y copia
+              su selector CSS. Puedes ayudarte de extensiones como{" "}
+              <strong>CSS Selector</strong> para obtenerlo directamente.
+            </p>
+          </div>
+
+          <p className="text-gray-500 dark:text-zinc-400 text-xs border-b border-gray-100 dark:border-zinc-800 pb-3">
+            Una vez configurado, pega el HTML del banner en el bloque{" "}
+            <strong>Content</strong> de la extensión. Al hacer la prueba en una
+            página de producto con precio superior a 130, el banner debe
+            aparecer.
+          </p>
+          <img
+            src={Banner}
+            alt="Banner de descuento"
+            className="rounded-lg border border-gray-200 dark:border-zinc-700 max-w-s"
+          />
+        </div>
+      ),
     },
   ],
 };

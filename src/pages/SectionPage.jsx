@@ -22,19 +22,19 @@ export default function SectionPage() {
           <p className="section-lead">{section.lead}</p>
         ) : section.lead?.pages ? (
           <div className="section-lead">
-            <p className="font-medium text-gray-900 mb-2">{section.lead.intro}</p>
+            <p className="font-medium text-gray-900 dark:text-zinc-200 mb-2">{section.lead.intro}</p>
             <ul className="grid grid-cols-2 gap-1.5 mb-3">
               {section.lead.pages.map((page) => (
                 <li
                   key={page}
-                  className="flex items-center gap-2 bg-white rounded-md px-3 py-1.5"
+                  className="flex items-center gap-2 bg-white dark:bg-zinc-800/60 rounded-md px-3 py-1.5 text-gray-700 dark:text-zinc-300"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 dark:bg-blue-500 flex-shrink-0" />
                   {page}
                 </li>
               ))}
             </ul>
-            <p className="pt-1 border-t border-gray-100">{section.lead.outro}</p>
+            <p className="pt-1 border-t border-gray-100 dark:border-zinc-800 dark:text-zinc-400">{section.lead.outro}</p>
           </div>
         ) : (
           <div className="section-lead">{section.lead}</div>

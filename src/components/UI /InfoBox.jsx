@@ -7,7 +7,7 @@ const colorVariants = {
     text: "text-red-800 dark:text-red-300",
   },
   blue: {
-    container: "bg-blue-50/80 dark:bg-blue-900/20 border-blue-100 dark:border-blue-800/50 ring-blue-200/50 dark:ring-blue-700/30",
+    container: "bg-blue-50/80 dark:bg-zinc-800 border-blue-100 dark:border-zinc-700 ring-blue-200/50 dark:ring-zinc-700",
     icon: "text-blue-700 dark:text-blue-400",
     text: "text-blue-800 dark:text-blue-300",
   },

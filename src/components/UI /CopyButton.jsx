@@ -14,7 +14,7 @@ export default function CopyButton({ text }) {
       onClick={handleCopy}
       type="button"
       aria-label={copied ? "Copiado" : "Copiar al portapapeles"}
-      className="flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 active:scale-[0.97] transition-all duration-200"
+      className="flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-zinc-400 hover:text-gray-800 dark:hover:text-zinc-200 px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-700 active:scale-[0.97] transition-all duration-200"
       title="Copiar al portapapeles"
     >
       {copied ? (

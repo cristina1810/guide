@@ -39,7 +39,7 @@ export default function StepImage({ src, alt = "", caption }) {
       {lightbox && <Lightbox src={src} alt={alt} onClose={() => setLightbox(false)} />}
       <figure className="flex flex-col gap-2">
         <div
-          className="relative rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden bg-gray-50 dark:bg-gray-800/50 group cursor-zoom-in"
+          className="relative rounded-lg border border-gray-200 dark:border-zinc-700 overflow-hidden bg-gray-50 dark:bg-zinc-800/50 group cursor-zoom-in"
           onClick={() => setLightbox(true)}
         >
           <div className="absolute top-3 right-3 z-10 flex items-center justify-center w-7 h-7 rounded-md bg-black/60 dark:bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
@@ -53,7 +53,7 @@ export default function StepImage({ src, alt = "", caption }) {
           />
         </div>
         {caption && (
-          <figcaption className="text-center text-xs text-gray-400 dark:text-gray-500 italic">
+          <figcaption className="text-center text-xs text-gray-400 dark:text-zinc-500 italic">
             {caption}
           </figcaption>
         )}

@@ -48,7 +48,7 @@ export default function StepCarousel({ images }) {
       {lightbox && <Lightbox src={src} alt={alt} onClose={() => setLightbox(false)} />}
 
       <div className="flex flex-col gap-3 max-w-lg mx-auto">
-        <div className="relative rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden bg-gray-50 dark:bg-gray-800/50 group cursor-zoom-in"
+        <div className="relative rounded-lg border border-gray-200 dark:border-zinc-700 overflow-hidden bg-gray-50 dark:bg-zinc-800/50 group cursor-zoom-in"
           onClick={() => setLightbox(true)}
         >
           {/* Número de paso */}
@@ -96,7 +96,7 @@ export default function StepCarousel({ images }) {
         </div>
 
         {caption && (
-          <p className="text-center text-xs text-gray-400 dark:text-gray-500 italic">{caption}</p>
+          <p className="text-center text-xs text-gray-400 dark:text-zinc-500 italic">{caption}</p>
         )}
 
         {images.length > 1 && (
@@ -109,8 +109,8 @@ export default function StepCarousel({ images }) {
                 aria-label={`Ir a imagen ${i + 1}`}
                 className={`flex items-center justify-center rounded-full transition-all duration-200 font-mono font-bold ${
                   i === current
-                    ? "w-4.5 h-4.5 text-[10px] bg-gray-700 dark:bg-gray-200 text-white dark:text-gray-900"
-                    : "w-1.5 h-1.5 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 text-transparent text-[0px]"
+                    ? "w-4.5 h-4.5 text-[10px] bg-gray-700 dark:bg-zinc-200 text-white dark:text-zinc-900"
+                    : "w-1.5 h-1.5 bg-gray-300 dark:bg-zinc-600 hover:bg-gray-400 dark:hover:bg-zinc-500 text-transparent text-[0px]"
                 }`}
               >
                 {i + 1}

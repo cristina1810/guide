@@ -19,47 +19,42 @@ export default function ChatlingMapping() {
   };
 
   return (
-    <div className="bg-white rounded-lg mx-auto shadow-xl w-full  overflow-hidden">
+    <div className="bg-white dark:bg-zinc-900 rounded-lg mx-auto shadow-xl w-full overflow-hidden">
       {/* Header */}
       <div className="bg-blue-500 text-white px-5 py-3 flex items-center justify-between">
-        <h2 className="text-base font-medium">
-          Map Custom Value to destination
-        </h2>
+        <h2 className="text-base font-medium">Map Custom Value to destination</h2>
         <button className="text-white hover:text-blue-100 transition-colors">
           <X size={18} />
         </button>
       </div>
 
       {/* Top hint */}
-      <div className="text-right px-5 py-2 text-sm text-gray-500">
+      <div className="text-right px-5 py-2 text-sm text-gray-500 dark:text-zinc-400">
         Click on a destination to edit
       </div>
 
       {/* Source → Destination Row */}
       <div className="px-5 pb-3 flex items-center gap-3">
-        {/* Source input */}
         <div className="flex items-center gap-2">
           <input
             type="text"
             defaultValue="chatling-embed-script"
-            className="border border-gray-300 rounded px-3 py-1.5 text-sm text-gray-700 w-52 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-gray-300 dark:border-zinc-600 rounded px-3 py-1.5 text-sm text-gray-700 dark:text-zinc-200 bg-white dark:bg-zinc-800 w-52 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
-          <HelpCircle size={16} className="text-gray-400 cursor-pointer" />
+          <HelpCircle size={16} className="text-gray-400 dark:text-zinc-500 cursor-pointer" />
         </div>
 
-        {/* Arrow */}
         <ArrowRight className="text-blue-500" size={22} />
 
-        {/* Destination pills */}
         <div className="flex items-center gap-2 flex-wrap">
           {destinations.map((dest) => (
             <span
               key={dest}
-              className="flex items-center gap-1 bg-blue-50 border border-blue-200 text-blue-700 text-sm px-3 py-1 rounded"
+              className="flex items-center gap-1 bg-blue-50 dark:bg-zinc-800 border border-blue-200 dark:border-zinc-700 text-blue-700 dark:text-blue-300 text-sm px-3 py-1 rounded"
             >
               <button
                 onClick={() => handleRemoveDestination(dest)}
-                className="text-blue-400 hover:text-blue-600"
+                className="text-blue-400 dark:text-blue-500 hover:text-blue-600 dark:hover:text-blue-300"
               >
                 <X size={13} />
               </button>
@@ -67,8 +62,7 @@ export default function ChatlingMapping() {
             </span>
           ))}
 
-          {/* Add Custom Destination button */}
-          <button className="flex items-center gap-1 border border-blue-400 text-blue-500 text-sm px-3 py-1 rounded hover:bg-blue-50 transition-colors">
+          <button className="flex items-center gap-1 border border-blue-400 dark:border-blue-600 text-blue-500 dark:text-blue-400 text-sm px-3 py-1 rounded hover:bg-blue-50 dark:hover:bg-zinc-800 transition-colors">
             <Plus size={14} />
             Add Custom Destination
           </button>
@@ -76,13 +70,13 @@ export default function ChatlingMapping() {
       </div>
 
       {/* Tabs */}
-      <div className="px-5 pb-0 flex gap-1 border-b border-gray-200">
+      <div className="px-5 pb-0 flex gap-1 border-b border-gray-200 dark:border-zinc-700">
         <button
           onClick={() => setActiveTab("text")}
           className={`px-4 py-1.5 text-sm rounded-t font-medium transition-colors ${
             activeTab === "text"
               ? "bg-blue-500 text-white"
-              : "text-gray-600 hover:bg-gray-100"
+              : "text-gray-600 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700"
           }`}
         >
           Text
@@ -92,7 +86,7 @@ export default function ChatlingMapping() {
           className={`px-4 py-1.5 text-sm rounded-t font-medium transition-colors ${
             activeTab === "js"
               ? "bg-blue-500 text-white"
-              : "text-gray-600 hover:bg-gray-100"
+              : "text-gray-600 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-700"
           }`}
         >
           JS Code
@@ -102,16 +96,16 @@ export default function ChatlingMapping() {
       {/* Body */}
       <div className="flex min-h-[190px]">
         {/* Sidebar */}
-        <div className="w-56 border-r border-gray-200 py-3">
-          <p className="text-xs font-semibold text-gray-500 px-4 mb-2 tracking-wide">
+        <div className="w-56 border-r border-gray-200 dark:border-zinc-700 py-3">
+          <p className="text-xs font-semibold text-gray-500 dark:text-zinc-400 px-4 mb-2 tracking-wide">
             CATEGORY
           </p>
           <div
             onClick={() => setSelectedCategory("add-custom")}
             className={`flex items-center gap-2 px-4 py-2 text-sm cursor-pointer transition-colors ${
               selectedCategory === "add-custom"
-                ? "border-l-4 border-blue-500 bg-blue-50 text-blue-700 font-medium"
-                : "border-l-4 border-transparent text-gray-600 hover:bg-gray-50"
+                ? "border-l-4 border-blue-500 bg-blue-50 dark:bg-zinc-800 text-blue-700 dark:text-blue-300 font-medium"
+                : "border-l-4 border-transparent text-gray-600 dark:text-zinc-300 hover:bg-gray-50 dark:hover:bg-zinc-800"
             }`}
           >
             <Plus size={14} />
@@ -120,20 +114,20 @@ export default function ChatlingMapping() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 px-6 py-5">
-          <p className="text-sm text-gray-600 mb-5">
+        <div className="flex-1 px-6 py-5 bg-white dark:bg-zinc-900">
+          <p className="text-sm text-gray-600 dark:text-zinc-300 mb-5">
             Type in a custom destination value below
           </p>
 
           <div className="flex items-center gap-3">
-            <label className="text-sm text-gray-700 whitespace-nowrap">
+            <label className="text-sm text-gray-700 dark:text-zinc-200 whitespace-nowrap">
               Custom Destination:
             </label>
             <input
               type="text"
               value={customDestination}
               onChange={(e) => setCustomDestination(e.target.value)}
-              className="border border-gray-300 rounded px-3 py-1.5 text-sm text-gray-700 w-52 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="border border-gray-300 dark:border-zinc-600 rounded px-3 py-1.5 text-sm text-gray-700 dark:text-zinc-200 bg-white dark:bg-zinc-800 w-52 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <button
               onClick={handleAddDestination}
@@ -147,8 +141,8 @@ export default function ChatlingMapping() {
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between px-5 py-3 border-t border-gray-200">
-        <button className="text-sm text-gray-500 hover:text-gray-700 transition-colors">
+      <div className="flex items-center justify-between px-5 py-3 border-t border-gray-200 dark:border-zinc-700">
+        <button className="text-sm text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200 transition-colors">
           Cancel
         </button>
         <MainButton>Done</MainButton>

@@ -1,6 +1,6 @@
 const variants = {
   info: {
-    wrap: "bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800/50",
+    wrap: "bg-blue-50 dark:bg-zinc-800 border-blue-200 dark:border-zinc-700",
 
     title: "text-blue-800 dark:text-blue-300",
     text: "text-blue-700 dark:text-blue-300/90",

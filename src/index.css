@@ -11,14 +11,14 @@
   --text: #0a0a0a;
   --text-muted: #737373;
   --text-soft: #a3a3a3;
-  --sidebar-bg: #0a0a0a;
-  --sidebar-text: #fafafa;
-  --sidebar-muted: #a3a3a3;
-  --sidebar-border: #1f1f1f;
-  --sidebar-active: #262626;
-  --accent: #0a0a0a;
-  --accent-on: #fafafa;
-  --ring: #0a0a0a;
+  --sidebar-bg: #09173a;
+  --sidebar-text: #dce6f9;
+  --sidebar-muted: #6e88b4;
+  --sidebar-border: #162d5a;
+  --sidebar-active: rgba(255, 255, 255, 0.08);
+  --accent: #60a5fa;
+  --accent-on: #ffffff;
+  --ring: #60a5fa;
 
   --sidebar-w: 264px;
   --drawer-w: 780px;
@@ -97,7 +97,7 @@ kbd {
   margin-left: auto;
   flex-shrink: 0;
   padding: 6px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   background: transparent;
   color: var(--sidebar-muted);
@@ -118,7 +118,7 @@ kbd {
   top: 22px;
   z-index: 50;
   padding: 7px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--panel);
   color: var(--text-muted);
@@ -150,7 +150,7 @@ kbd {
 .sidebar-brand-mark {
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--sidebar-active);
   color: var(--sidebar-text);
   display: grid;
@@ -184,7 +184,7 @@ kbd {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: color 120ms ease;
 }
 .sidebar-group-header:hover { color: var(--sidebar-text); }
@@ -207,7 +207,7 @@ kbd {
   text-align: left;
   background: transparent;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   color: var(--sidebar-muted);
   font-size: 13.5px;
   letter-spacing: -0.005em;
@@ -244,7 +244,7 @@ kbd {
 .sidebar-suggestions-input {
   width: 100%;
   resize: none;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--sidebar-border);
   background: var(--sidebar-active);
   color: var(--sidebar-text);
@@ -261,7 +261,7 @@ kbd {
 .sidebar-suggestions-btn {
   align-self: flex-end;
   padding: 5px 14px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   background: #3b82f6;
   color: #fff;

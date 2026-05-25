@@ -14,7 +14,7 @@ function SelectField({ value, onChange, options, className = "w-52" }) {
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border border-gray-300 rounded px-2 py-1 text-xs appearance-none bg-white focus:outline-none focus:ring-1 focus:ring-blue-400"
+        className="w-full border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs appearance-none bg-white dark:bg-zinc-900 focus:outline-none focus:ring-1 focus:ring-blue-400"
       >
         {options.map((o) => (
           <option key={o.value ?? o} value={o.value ?? o}>
@@ -24,7 +24,7 @@ function SelectField({ value, onChange, options, className = "w-52" }) {
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-1.5 flex items-center">
         <svg
-          className="w-3 h-3 text-gray-400"
+          className="w-3 h-3 text-gray-400 dark:text-zinc-500"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ function ConfigurationTab() {
     <div className="flex">
       {/* ── Left ── */}
       <div className="flex-1 px-6 py-5 ">
-        <h2 className="text-sm font-semibold text-gray-700 mb-4">
+        <h2 className="text-sm font-semibold text-gray-700 dark:text-zinc-200 mb-4">
           Configuration
         </h2>
 
@@ -87,7 +87,7 @@ function ConfigurationTab() {
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+            className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
           />
           <Helper>
             Assign a unique name when using multiple tags by the same vendor.
@@ -99,7 +99,7 @@ function ConfigurationTab() {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             rows={3}
-            className="w-64 border border-gray-300 rounded px-2 py-1 text-xs resize-none focus:outline-none focus:ring-1 focus:ring-blue-400"
+            className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs resize-none focus:outline-none focus:ring-1 focus:ring-blue-400"
           />
         </Field>
 
@@ -114,7 +114,7 @@ function ConfigurationTab() {
           <input
             value={pixelId}
             onChange={(e) => setPixelId(e.target.value)}
-            className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+            className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
           />
           <Helper>Found in your Snapchat Ads Manager.</Helper>
         </Field>
@@ -136,8 +136,8 @@ function ConfigurationTab() {
         {publishToggles.map(({ label, val, set }) => (
           <div key={label} className="flex items-center gap-3 mb-3">
             <Toggle checked={val} onChange={set} />
-            <span className="text-xs text-gray-600">{label}</span>
-            <span className="text-xs text-gray-400">{val ? "On" : "Off"}</span>
+            <span className="text-xs text-gray-600 dark:text-zinc-300">{label}</span>
+            <span className="text-xs text-gray-400 dark:text-zinc-500">{val ? "On" : "Off"}</span>
           </div>
         ))}
 
@@ -156,16 +156,16 @@ function ConfigurationTab() {
 
         <div className="mt-3 mb-1 flex items-center gap-3">
           <Toggle />
-          <span className="text-xs font-medium text-gray-600">Bundle Flag</span>
-          <span className="text-xs text-gray-400">
+          <span className="text-xs font-medium text-gray-600 dark:text-zinc-300">Bundle Flag</span>
+          <span className="text-xs text-gray-400 dark:text-zinc-500">
             {bundleFlag ? "On" : "Off"}
           </span>
         </div>
-        <p className="text-xs text-gray-400 mb-1">
+        <p className="text-xs text-gray-400 dark:text-zinc-500 mb-1">
           This flag determines if the tag code is bundled into using.js. This
           will reduce the number of server requests.
         </p>
-        <p className="text-xs text-gray-400 mb-5">
+        <p className="text-xs text-gray-400 dark:text-zinc-500 mb-5">
           A full list of bundled tags is available in the Publish Settings
           dialog.
         </p>
@@ -192,26 +192,26 @@ function ConfigurationTab() {
 
         <div className="flex items-center gap-3 mb-1">
           <Toggle checked={sendFlag} onChange={setSendFlag} />
-          <span className="text-xs font-medium text-gray-600">Send Flag</span>
-          <span className="text-xs text-gray-400">
+          <span className="text-xs font-medium text-gray-600 dark:text-zinc-300">Send Flag</span>
+          <span className="text-xs text-gray-400 dark:text-zinc-500">
             {sendFlag ? "On" : "Off"}
           </span>
         </div>
-        <p className="text-xs text-gray-400 mb-4">
+        <p className="text-xs text-gray-400 dark:text-zinc-500 mb-4">
           This flag determines whether or not this library has event-level data
           sent to the tracking. The default for this config is yes.
         </p>
 
         <div className="flex items-center gap-3 mb-1">
           <Toggle checked={syncLoad} onChange={setSyncLoad} />
-          <span className="text-xs font-medium text-gray-600">
+          <span className="text-xs font-medium text-gray-600 dark:text-zinc-300">
             Synchronous Load Type
           </span>
-          <span className="text-xs text-gray-400">
+          <span className="text-xs text-gray-400 dark:text-zinc-500">
             {syncLoad ? "On" : "Off"}
           </span>
         </div>
-        <p className="text-xs text-gray-400 mb-4">
+        <p className="text-xs text-gray-400 dark:text-zinc-500 mb-4">
           This value is set when the library needs to be loaded synchronously.
         </p>
 
@@ -219,7 +219,7 @@ function ConfigurationTab() {
           <input
             value={customScript}
             onChange={(e) => setCustomScript(e.target.value)}
-            className="w-64 border border-gray-300 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
+            className="w-64 border border-gray-300 dark:border-zinc-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400"
           />
           <Helper>
             This value is set when the library that supports this tag is served
@@ -272,11 +272,11 @@ function RulesAndEventsTab() {
       {/* ── Contenido principal ── */}
       <div className="flex flex-1">
         {/* ── Left ── */}
-        <div className="flex-1 border-r border-gray-200 px-6 py-5">
-          <h2 className="text-sm font-semibold text-gray-700 mb-2">
+        <div className="flex-1 border-r border-gray-200 dark:border-zinc-700 px-6 py-5">
+          <h2 className="text-sm font-semibold text-gray-700 dark:text-zinc-200 mb-2">
             Set Rules and Events
           </h2>
-          <p className="text-xs text-gray-500 mb-4">
+          <p className="text-xs text-gray-500 dark:text-zinc-400 mb-4">
             Tag will fire when the following rule and event conditions are true:
           </p>
 
@@ -307,7 +307,7 @@ function RulesAndEventsTab() {
             setHoverDrop={setHoverDrop}
           />
 
-          <p className="text-xs font-semibold text-gray-500 my-4">AND NOT</p>
+          <p className="text-xs font-semibold text-gray-500 dark:text-zinc-400 my-4">AND NOT</p>
 
           {/* Drop zone — EXCLUDE */}
           <DropZone
@@ -321,7 +321,7 @@ function RulesAndEventsTab() {
         {/* ── Right ── */}
         <div className="w-80 shrink-0 px-4 py-5">
           {/* Sub-tabs */}
-          <div className="flex border-b border-gray-200 mb-4">
+          <div className="flex border-b border-gray-200 dark:border-zinc-700 mb-4">
             {["Rules", "Events"].map((t) => (
               <button
                 key={t}
@@ -329,7 +329,7 @@ function RulesAndEventsTab() {
                 className={`px-4 py-2 text-xs font-medium border-b-2 transition-colors ${
                   subTab === t
                     ? "border-blue-500 text-blue-600"
-                    : "border-transparent text-gray-500 hover:text-gray-700"
+                    : "border-transparent text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"
                 }`}
               >
                 {t}
@@ -339,7 +339,7 @@ function RulesAndEventsTab() {
 
           {/* Toolbar */}
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-xs text-gray-500 mr-auto">
+            <span className="text-xs text-gray-500 dark:text-zinc-400 mr-auto">
               {filtered.length} Rules
             </span>
             <div className="relative">
@@ -347,10 +347,10 @@ function RulesAndEventsTab() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search"
-                className="border border-gray-300 rounded pl-6 pr-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400 w-28"
+                className="border border-gray-300 dark:border-zinc-600 rounded pl-6 pr-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-400 w-28"
               />
               <svg
-                className="w-3 h-3 text-gray-400 absolute left-1.5 top-1/2 -translate-y-1/2"
+                className="w-3 h-3 text-gray-400 dark:text-zinc-500 absolute left-1.5 top-1/2 -translate-y-1/2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -372,12 +372,12 @@ function RulesAndEventsTab() {
           {/* Table */}
           <table className="w-full text-xs">
             <thead>
-              <tr className="bg-gray-50 border-b border-t border-gray-200">
-                <th className="text-left px-2 py-2 text-gray-500 font-medium">
-                  Name <span className="text-gray-400">↑</span>
+              <tr className="bg-gray-50 dark:bg-zinc-800 border-b border-t border-gray-200 dark:border-zinc-700">
+                <th className="text-left px-2 py-2 text-gray-500 dark:text-zinc-400 font-medium">
+                  Name <span className="text-gray-400 dark:text-zinc-500">↑</span>
                 </th>
-                <th className="text-right px-2 py-2 text-gray-500 font-medium">
-                  UID <span className="text-gray-400">↑</span>
+                <th className="text-right px-2 py-2 text-gray-500 dark:text-zinc-400 font-medium">
+                  UID <span className="text-gray-400 dark:text-zinc-500">↑</span>
                 </th>
               </tr>
             </thead>
@@ -385,11 +385,11 @@ function RulesAndEventsTab() {
               {filtered.map((rule) => (
                 <tr
                   key={rule.id}
-                  className="border-b border-gray-100 hover:bg-gray-50"
+                  className="border-b border-gray-100 dark:border-zinc-800 hover:bg-gray-50 dark:hover:bg-zinc-800"
                 >
                   <td className="px-2 py-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-gray-300 text-xs select-none">
+                      <span className="text-gray-300 dark:text-zinc-600 text-xs select-none">
                         ⋮⋮
                       </span>
                       <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
@@ -398,7 +398,7 @@ function RulesAndEventsTab() {
                       </span>
                     </div>
                   </td>
-                  <td className="px-2 py-2 text-right text-gray-500">
+                  <td className="px-2 py-2 text-right text-gray-500 dark:text-zinc-400">
                     {rule.uid}
                   </td>
                 </tr>
@@ -421,10 +421,10 @@ function DropZone({ label, id, hoverDrop, setHoverDrop }) {
         }}
         onDragLeave={() => setHoverDrop(null)}
         onDrop={() => setHoverDrop(null)}
-        className={`border-2 border-dashed rounded mx-1 py-8 flex items-center justify-center text-xs text-gray-400 transition-colors cursor-default ${
+        className={`border-2 border-dashed rounded mx-1 py-8 flex items-center justify-center text-xs text-gray-400 dark:text-zinc-500 transition-colors cursor-default ${
           hoverDrop === id
-            ? "border-blue-400 bg-blue-50 text-blue-400"
-            : "border-gray-300"
+            ? "border-blue-400 bg-blue-50 dark:bg-zinc-800 text-blue-400"
+            : "border-gray-300 dark:border-zinc-600"
         }`}
       >
         {label}
@@ -521,7 +521,7 @@ function MappedVariablesTab() {
 
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-sm font-semibold text-gray-700">
+        <h2 className="text-sm font-semibold text-gray-700 dark:text-zinc-200">
           Mapped Variables
         </h2>
         <MainButton>
@@ -541,14 +541,14 @@ function MappedVariablesTab() {
       </div>
 
       {/* Table */}
-      <div className="border border-gray-200 rounded overflow-hidden">
+      <div className="border border-gray-200 dark:border-zinc-700 rounded overflow-hidden">
         <table className="w-full text-xs">
           <thead>
-            <tr className="bg-gray-50 border-b border-gray-200">
-              <th className="text-left px-4 py-2.5 text-gray-500 font-medium w-5/12">
+            <tr className="bg-gray-50 dark:bg-zinc-800 border-b border-gray-200 dark:border-zinc-700">
+              <th className="text-left px-4 py-2.5 text-gray-500 dark:text-zinc-400 font-medium w-5/12">
                 Variable
               </th>
-              <th className="text-left px-4 py-2.5 text-gray-500 font-medium w-6/12">
+              <th className="text-left px-4 py-2.5 text-gray-500 dark:text-zinc-400 font-medium w-6/12">
                 Destination
               </th>
               <th className="w-1/12" />
@@ -558,7 +558,7 @@ function MappedVariablesTab() {
             {vars.map((v) => (
               <tr
                 key={v.id}
-                className="border-b border-gray-100 hover:bg-gray-50 group"
+                className="border-b border-gray-100 dark:border-zinc-800 hover:bg-gray-50 dark:hover:bg-zinc-800 group"
               >
                 <td className="px-4 py-2.5">
                   <div className="flex items-center gap-2">
@@ -566,10 +566,10 @@ function MappedVariablesTab() {
                       ≡
                     </span>
                     <div>
-                      <div className="font-medium text-gray-700">
+                      <div className="font-medium text-gray-700 dark:text-zinc-200">
                         {v.variable}
                       </div>
-                      <div className="text-gray-400">{v.type}</div>
+                      <div className="text-gray-400 dark:text-zinc-500">{v.type}</div>
                     </div>
                   </div>
                 </td>
@@ -591,7 +591,7 @@ function MappedVariablesTab() {
                 </td>
                 <td className="px-3 py-2.5">
                   <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button className="text-gray-400 hover:text-gray-600">
+                    <button className="text-gray-400 dark:text-zinc-500 hover:text-gray-600 dark:hover:text-zinc-300">
                       <svg
                         className="w-3.5 h-3.5"
                         fill="none"
@@ -608,7 +608,7 @@ function MappedVariablesTab() {
                     </button>
                     <button
                       onClick={() => setVars(vars.filter((x) => x.id !== v.id))}
-                      className="text-gray-400 hover:text-red-500"
+                      className="text-gray-400 dark:text-zinc-500 hover:text-red-500"
                     >
                       <svg
                         className="w-3.5 h-3.5"
@@ -641,7 +641,7 @@ function MappedVariablesTab() {
 function SectionTitle({ children, className = "" }) {
   return (
     <h3
-      className={`text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3 ${className}`}
+      className={`text-xs font-semibold text-gray-500 dark:text-zinc-400 uppercase tracking-wide mb-3 ${className}`}
     >
       {children}
     </h3>
@@ -651,14 +651,14 @@ function SectionTitle({ children, className = "" }) {
 function Field({ label, children, className = "" }) {
   return (
     <div className={`mb-4 ${className}`}>
-      <label className="block text-xs text-gray-500 mb-1">{label}</label>
+      <label className="block text-xs text-gray-500 dark:text-zinc-400 mb-1">{label}</label>
       {children}
     </div>
   );
 }
 
 function Helper({ children }) {
-  return <p className="text-xs text-gray-400 mt-1">{children}</p>;
+  return <p className="text-xs text-gray-400 dark:text-zinc-500 mt-1">{children}</p>;
 }
 
 /* ══════════════════════════════════
@@ -685,7 +685,7 @@ export default function SnapPixelApp() {
     <div className="flex items-start justify-center">
       <div className="w-full rounded-xl overflow-hidden">
         {/* ── Tab Nav ── */}
-        <div className="flex border-b border-gray-200 bg-white">
+        <div className="flex border-b border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.id;
             const isDone =
@@ -697,7 +697,7 @@ export default function SnapPixelApp() {
                 className={`flex items-center gap-1.5 px-5 py-3 text-sm font-medium border  transition-colors whitespace-nowrap ${
                   isActive
                     ? "border-blue-500 text-blue-600 rounded-xl"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 rounded-xl"
+                    : "border-transparent text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200 hover:border-gray-300 dark:border-zinc-600 rounded-xl"
                 }`}
               >
                 {tab.label}
