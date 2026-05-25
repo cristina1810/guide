@@ -55,7 +55,9 @@ export const snapchat = {
       {/* Código */}
       <div className="bg-gray-100 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded overflow-hidden">
         <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800">
-          <span className="text-xs text-gray-400 dark:text-zinc-500 font-medium">JavaScript</span>
+          <span className="text-xs text-gray-400 dark:text-zinc-500 font-medium">
+            JavaScript
+          </span>
           <CopyButton text="document.querySelector('#qty').value" />
         </div>
         <pre className="px-3 py-2 text-xs text-gray-700 dark:text-zinc-200 font-mono overflow-x-auto">
@@ -90,7 +92,7 @@ export const snapchat = {
     },
     {
       title: "TAG: Snap Pixel",
-      enunciado: "FALTA ENUNCIADO!!!",
+      enunciado: "",
 
       component: SnapPixel,
       explicacion:
